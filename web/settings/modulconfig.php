@@ -1111,6 +1111,9 @@
 				if(strpos($line, "kostalplenticorebatt=") !== false) {
 					list(, $kostalplenticorebattold) = explode("=", $line);
 				}
+				if(strpos($line, "froniuserzeugung=") !== false) {
+					list(, $froniuserzeugungold) = explode("=", $line);
+				}
 				if(strpos($line, "froniusprimo=") !== false) {
 					list(, $froniusprimoold) = explode("=", $line);
 				}
@@ -3883,6 +3886,9 @@
 						<div class="row" style="background-color:#febebe">
 							Die IP des Wechselrichters wird im dazugehörigen Fronius PV-Modul eingestellt.
 						</div>
+						<input type='hidden' value='0' name='froniuserzeugung'>
+						<input id="froniuserzeugung" name="froniuserzeugung" value="1" type="checkbox" <?php if ( $froniuserzeugungold == 1){ echo "checked"; } ?> >
+						<label for="froniuserzeugung">Erzeugungszähler statt Bezugszähler</label>
 						<input type='hidden' value='0' name='froniusprimo'>
 						<input id="froniusprimo" name="froniusprimo" value="1" type="checkbox" <?php if ( $froniusprimoold == 1){ echo "checked"; } ?> >
 						<label for="froniusprimo">Kompatibilitätsmodus für die Primo Reihe</label>

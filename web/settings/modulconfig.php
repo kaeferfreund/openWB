@@ -3886,12 +3886,16 @@
 						<div class="row" style="background-color:#febebe">
 							Die IP des Wechselrichters wird im dazugehörigen Fronius PV-Modul eingestellt.
 						</div>
-						<input type='hidden' value='0' name='froniuserzeugung'>
-						<input id="froniuserzeugung" name="froniuserzeugung" value="1" type="checkbox" <?php if ( $froniuserzeugungold == 1){ echo "checked"; } ?> >
-						<label for="froniuserzeugung">Erzeugungszähler statt Bezugszähler</label>
-						<input type='hidden' value='0' name='froniusprimo'>
-						<input id="froniusprimo" name="froniusprimo" value="1" type="checkbox" <?php if ( $froniusprimoold == 1){ echo "checked"; } ?> >
-						<label for="froniusprimo">Kompatibilitätsmodus für die Primo Reihe</label>
+						<div class="row">
+							<input type='hidden' value='0' name='froniuserzeugung'>
+							<input id="froniuserzeugung" name="froniuserzeugung" value="1" type="checkbox" <?php if ( $froniuserzeugungold == 1){ echo "checked"; } ?> >
+							<label for="froniuserzeugung">Erzeugungszähler statt Bezugszähler</label>
+						</div>
+						<div class="row">
+							<input type='hidden' value='0' name='froniusprimo'>
+							<input id="froniusprimo" name="froniusprimo" value="1" type="checkbox" <?php if ( $froniusprimoold == 1){ echo "checked"; } ?> >
+							<label for="froniusprimo">Kompatibilitätsmodus für die Primo Reihe</label>
+						</div>
 					</div>
 					<div id="wattbezugjson">
 						<div class="row" style="background-color:#febebe">

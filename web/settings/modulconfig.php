@@ -3882,21 +3882,14 @@
 							Infos zum SMA Energy Meter <a href="https://github.com/snaptec/openWB#extras">HIER</a>
 						</div>
 					</div>
-					<div id="wattbezugfronius">
-						<div class="row" style="background-color:#febebe">
-							Die IP des Wechselrichters wird im dazugehörigen Fronius PV-Modul eingestellt.
-						</div>
-						<div class="row">
-							<input type='hidden' value='0' name='froniuserzeugung'>
-							<input id="froniuserzeugung" name="froniuserzeugung" value="1" type="checkbox" <?php if ( $froniuserzeugungold == 1){ echo "checked"; } ?> >
-							<label for="froniuserzeugung">Erzeugungszähler statt Bezugszähler</label>
-						</div>
-						<div class="row">
-							<input type='hidden' value='0' name='froniusprimo'>
-							<input id="froniusprimo" name="froniusprimo" value="1" type="checkbox" <?php if ( $froniusprimoold == 1){ echo "checked"; } ?> >
-							<label for="froniusprimo">Kompatibilitätsmodus für die Primo Reihe</label>
-						</div>
+					<div id="wattbezugfronius"> Die IP des Wechselrichters wird im dazugehörigen Fronius PV-Modul eingestellt.
 					</div>
+					<input type='hidden' value='0' name='froniuserzeugung'>
+					<input id="froniuserzeugung" name="froniuserzeugung" value="1" type="checkbox" <?php if ( $froniuserzeugungold == 1){ echo "checked"; } ?> >
+					<label for="froniuserzeugung">Erzeugungszähler statt Bezugszähler</label> </div><br>
+					<input type='hidden' value='0' name='froniusprimo'>
+					<input id="froniusprimo" name="froniusprimo" value="1" type="checkbox" <?php if ( $froniusprimoold == 1){ echo "checked"; } ?> >
+					<label for="froniusprimo"> Kompatibilitätsmodus für die Primo Reihe</label>
 					<div id="wattbezugjson">
 						<div class="row" style="background-color:#febebe">
 							<b><label for="bezugjsonurl">Bezug URL:</label></b>

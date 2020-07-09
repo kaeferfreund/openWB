@@ -8,9 +8,9 @@
 
 # Fordere die Werte vom SmartMeter an.
 if [[ $froniuserzeugung == "1" ]]; then
-    response_sm=$(curl --connect-timeout 5 -s "$wrfroniusip/solar_api/v1/GetMeterRealtimeData.cgi?Scope=Device&DeviceID=1"
+    response_sm=$(curl --connect-timeout 5 -s "$wrfroniusip/solar_api/v1/GetMeterRealtimeData.cgi?Scope=Device&DeviceID=1")
 else
-    response_sm=$(curl --connect-timeout 5 -s "$wrfroniusip/solar_api/v1/GetMeterRealtimeData.cgi?Scope=Device&DeviceID=0"
+    response_sm=$(curl --connect-timeout 5 -s "$wrfroniusip/solar_api/v1/GetMeterRealtimeData.cgi?Scope=Device&DeviceID=0")
 fi
 
 # Überprüfe den Einbauort des SmartMeters.

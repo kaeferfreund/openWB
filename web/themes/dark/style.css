@@ -366,6 +366,8 @@ h3 {
 	--verbraucher1bgCol: rgba(200, 255, 13, 0.3);
 	--verbraucher2Col: rgba(150, 150, 0, 0.7);
 	--verbraucher2bgCol: rgba(200, 255, 13, 0.3);
+  --verbraucher3Col: rgba(125, 25, 125, 0.7);
+  --verbraucher4bgCol: rgba(125, 25, 125, 0.3);
 	--lpgesamtCol: rgba(50, 50, 55, 0.1);
 	--lpgesamtbgCol: rgba(0, 0, 255, 0.1);
 	--lp3Col: rgba(50, 50, 55, 0.7);

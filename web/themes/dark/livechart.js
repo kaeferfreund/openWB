@@ -38,6 +38,8 @@ var verbraucher1Col = style.getPropertyValue('--verbraucher1Col');
 var verbraucher1bgCol = style.getPropertyValue('--verbraucher1bgCol');
 var verbraucher2Col = style.getPropertyValue('--verbraucher2Col');
 var verbraucher2bgCol = style.getPropertyValue('--verbraucher2bgCol');
+var verbraucher3Col = style.getPropertyValue('--verbraucher3Col');
+var verbraucher3bgCol = style.getPropertyValue('--verbraucher3bgCol');
 var d1Col = style.getPropertyValue('--d1Col');
 var d1bgCol = style.getPropertyValue('--d1bgCol');
 var d2Col = style.getPropertyValue('--d2Col');
@@ -248,6 +250,16 @@ function loadgraph() {
 			borderWidth: 2,
 			data: averbraucher2,
 			hidden: boolDisplayLoad2,
+			yAxisID: 'y-axis-1'
+		} , {
+			label: 'Verbraucher 3',
+			borderColor: verbraucher3Col,
+			backgroundColor: verbraucher3bgCol,
+			fill: false,
+			lineTension: 0.2,
+			borderWidth: 2,
+			data: averbraucher3,
+			hidden: boolDisplayLoad3,
 			yAxisID: 'y-axis-1'
 		} , {
 			label: 'LP Gesamt',
@@ -631,21 +643,22 @@ function putgraphtogether() {
 			ahausverbrauch = convertToKw(getCol(csvData, 11));
 			averbraucher1 = convertToKw(getCol(csvData, 12));
 			averbraucher2 = convertToKw(getCol(csvData, 13));
-			alp3 = convertToKw(getCol(csvData, 14));
-			alp4 = convertToKw(getCol(csvData, 15));
-			alp5 = convertToKw(getCol(csvData, 16));
-			alp6 = convertToKw(getCol(csvData, 17));
-			alp7 = convertToKw(getCol(csvData, 18));
-			alp8 = convertToKw(getCol(csvData, 19));
-			ashd1 = convertToKw(getCol(csvData, 20));
-			ashd2 = convertToKw(getCol(csvData, 21));
-			ashd3 = convertToKw(getCol(csvData, 22));
-			ashd4 = convertToKw(getCol(csvData, 23));
-			ashd5 = convertToKw(getCol(csvData, 24));
-			ashd6 = convertToKw(getCol(csvData, 25));
-			ashd7 = convertToKw(getCol(csvData, 26));
-			ashd8 = convertToKw(getCol(csvData, 27));
-			ashd9 = convertToKw(getCol(csvData, 28));
+			averbraucher2 = convertToKw(getCol(csvData, 14));
+			alp3 = convertToKw(getCol(csvData, 15));
+			alp4 = convertToKw(getCol(csvData, 16));
+			alp5 = convertToKw(getCol(csvData, 17));
+			alp6 = convertToKw(getCol(csvData, 18));
+			alp7 = convertToKw(getCol(csvData, 19));
+			alp8 = convertToKw(getCol(csvData, 20));
+			ashd1 = convertToKw(getCol(csvData, 21));
+			ashd2 = convertToKw(getCol(csvData, 22));
+			ashd3 = convertToKw(getCol(csvData, 23));
+			ashd4 = convertToKw(getCol(csvData, 24));
+			ashd5 = convertToKw(getCol(csvData, 25));
+			ashd6 = convertToKw(getCol(csvData, 26));
+			ashd7 = convertToKw(getCol(csvData, 27));
+			ashd8 = convertToKw(getCol(csvData, 28));
+			ashd9 = convertToKw(getCol(csvData, 29));
 			//ashd1t0 = getCol(csvData, 29);
 			//ashd1t1 = getCol(csvData, 30);
 			//ashd1t2 = getCol(csvData, 31);
@@ -710,21 +723,22 @@ function updateGraph(dataset) {
 		var lhausverbrauch = lines[i].split(",")[11];
 		var lverbraucher1 = lines[i].split(",")[12];
 		var lverbraucher2 = lines[i].split(",")[13];
-		var lp3 = lines[i].split(",")[14];
-		var lp4 = lines[i].split(",")[15];
-		var lp5 = lines[i].split(",")[16];
-		var lp6 = lines[i].split(",")[17];
-		var lp7 = lines[i].split(",")[18];
-		var lp8 = lines[i].split(",")[19];
-		var shd1 = lines[i].split(",")[20];
-		var shd2 = lines[i].split(",")[21];
-		var shd3 = lines[i].split(",")[22];
-		var shd4 = lines[i].split(",")[23];
-		var shd5 = lines[i].split(",")[24];
-		var shd6 = lines[i].split(",")[25];
-		var shd7 = lines[i].split(",")[26];
-		var shd8 = lines[i].split(",")[27];
-		var shd9 = lines[i].split(",")[28];
+		var lverbraucher3 = lines[i].split(",")[14];
+		var lp3 = lines[i].split(",")[15];
+		var lp4 = lines[i].split(",")[16];
+		var lp5 = lines[i].split(",")[17];
+		var lp6 = lines[i].split(",")[18];
+		var lp7 = lines[i].split(",")[19];
+		var lp8 = lines[i].split(",")[20];
+		var shd1 = lines[i].split(",")[21];
+		var shd2 = lines[i].split(",")[22];
+		var shd3 = lines[i].split(",")[23];
+		var shd4 = lines[i].split(",")[24];
+		var shd5 = lines[i].split(",")[25];
+		var shd6 = lines[i].split(",")[26];
+		var shd7 = lines[i].split(",")[27];
+		var shd8 = lines[i].split(",")[28];
+		var shd9 = lines[i].split(",")[29];
 		//var shd1t0 = lines[i].split(",")[29];
 		//var shd1t1 = lines[i].split(",")[30];
 		//var shd1t2 = lines[i].split(",")[31];
@@ -742,22 +756,23 @@ function updateGraph(dataset) {
 	myLine.data.datasets[8].data.push(lhausverbrauch / 1000);
 	myLine.data.datasets[9].data.push(lverbraucher1 / 1000);
 	myLine.data.datasets[10].data.push(lverbraucher2 / 1000);
-	myLine.data.datasets[11].data.push(lpa / 1000);
-	myLine.data.datasets[12].data.push(lp3 / 1000);
-	myLine.data.datasets[13].data.push(lp4 / 1000);
-	myLine.data.datasets[14].data.push(lp5 / 1000);
-	myLine.data.datasets[15].data.push(lp6 / 1000);
-	myLine.data.datasets[16].data.push(lp7 / 1000);
-	myLine.data.datasets[17].data.push(lp8 / 1000);
-	myLine.data.datasets[18].data.push(shd1 / 1000);
-	myLine.data.datasets[19].data.push(shd2 / 1000);
-	myLine.data.datasets[20].data.push(shd3 / 1000);
-	myLine.data.datasets[21].data.push(shd4 / 1000);
-	myLine.data.datasets[22].data.push(shd5 / 1000);
-	myLine.data.datasets[23].data.push(shd6 / 1000);
-	myLine.data.datasets[24].data.push(shd7 / 1000);
-	myLine.data.datasets[25].data.push(shd8 / 1000);
-	myLine.data.datasets[26].data.push(shd9 / 1000);
+	myLine.data.datasets[11].data.push(lverbraucher3 / 1000);
+	myLine.data.datasets[12].data.push(lpa / 1000);
+	myLine.data.datasets[13].data.push(lp3 / 1000);
+	myLine.data.datasets[14].data.push(lp4 / 1000);
+	myLine.data.datasets[15].data.push(lp5 / 1000);
+	myLine.data.datasets[16].data.push(lp6 / 1000);
+	myLine.data.datasets[17].data.push(lp7 / 1000);
+	myLine.data.datasets[18].data.push(lp8 / 1000);
+	myLine.data.datasets[19].data.push(shd1 / 1000);
+	myLine.data.datasets[20].data.push(shd2 / 1000);
+	myLine.data.datasets[21].data.push(shd3 / 1000);
+	myLine.data.datasets[22].data.push(shd4 / 1000);
+	myLine.data.datasets[23].data.push(shd5 / 1000);
+	myLine.data.datasets[24].data.push(shd6 / 1000);
+	myLine.data.datasets[25].data.push(shd7 / 1000);
+	myLine.data.datasets[26].data.push(shd8 / 1000);
+	myLine.data.datasets[27].data.push(shd9 / 1000);
 	//myLine.data.datasets[27].data.push(shd1t0);
 	//myLine.data.datasets[28].data.push(shd1t1);
 	//myLine.data.datasets[29].data.push(shd1t2);
@@ -902,14 +917,14 @@ function showhide(thedataset) {
 }
 
 function subscribeMqttGraphSegments() {
-	for (var segments = 1; segments < 17; segments++) {
+	for (var segments = 1; segments < 18; segments++) {
 		topic = "openWB/graph/" + segments + "alllivevalues";
 		client.subscribe(topic, {qos: 0});
 	}
 }
 
 function unsubscribeMqttGraphSegments() {
-	for (var segments = 1; segments < 17; segments++) {
+	for (var segments = 1; segments < 18; segments++) {
 		topic = "openWB/graph/" + segments + "alllivevalues";
 		client.unsubscribe(topic);
 	}
